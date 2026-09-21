@@ -3,8 +3,21 @@ const express = require ("express")
 const app = express()
 
 app.get("/api/notes" , (req , res)=>{
-    res.status(404).send("you got 5 notes")
+    res.status(200).send("you got 5 notes")
 })
+
+app.post("/api/notes",(req , res)=>{
+    res.status(201).json({message : "note created Sucessfully!"})
+})
+
+app.put("/api/notes/:id",(req , res)=>{
+    res.status(200).json({message : "note updated Sucessfully!"})
+})
+
+app.delete("/api/notes/:id",(req , res)=>{
+    res.status(200).json({message : "note deleted Sucessfully!"})
+})
+
 
 app.listen(5001, ()=>{
     console.log("server started on port 5001 !");
