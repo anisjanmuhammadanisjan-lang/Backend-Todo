@@ -4,12 +4,15 @@ import { connectdb } from "./config/db.js";
 import dotenv from "dotenv"
 
 dotenv.config()
+connectdb()
 
 const app = express();
+//middle ware
+app.use(express.json())
 
 app.use("/api/notes", notesRoute);
 
-connectdb()
+
 
 
 app.listen(5001, () => {

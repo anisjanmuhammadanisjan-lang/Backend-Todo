@@ -5,11 +5,11 @@ import mongoose from "mongoose"
 
 const noteSchema = new mongoose.Schema({
     title: {
-        type:string,
+        type:String,
         required : true
     },
     content:{
-        type : string,
+        type : String,
         required : true
     }
 }, {timestamps : true})
@@ -17,3 +17,4 @@ const noteSchema = new mongoose.Schema({
 const Note = mongoose.model("note" , noteSchema)
 
 export default Note
+// module.exports = Note
